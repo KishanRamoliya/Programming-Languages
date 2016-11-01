@@ -1,0 +1,107 @@
+Script started on Sat 21 Nov 2015 03:35:50 PM EST
+[?1034hbash-4.1$ exitclisp
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+[1]> [?1034h(load "")[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp")r")e")f")i")x")
+;; Loading file /home/kramoliy/Q13/prefix.lsp ...
+;; Loaded file /home/kramoliy/Q13/prefix.lsp
+T
+[2]> (trace prefix)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+;; Tracing function PREFIX.
+(PREFIX)
+[3]> (prefix "[K'(1 2 3 4 5 6 [K)[C[C[C[C[C[C[C[C[C[C[C[C[C '( 7 8 9 10 11 12)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+1. Trace: (PREFIX '(1 2 3 4 5 6) '(7 8 9 10 11 12))
+2. Trace: (PREFIX '(2 3 4 5 6) '(7 8 9 10 11 12))
+3. Trace: (PREFIX '(3 4 5 6) '(7 8 9 10 11 12))
+4. Trace: (PREFIX '(4 5 6) '(7 8 9 10 11 12))
+5. Trace: (PREFIX '(5 6) '(7 8 9 10 11 12))
+6. Trace: (PREFIX '(6) '(7 8 9 10 11 12))
+7. Trace: (PREFIX 'NIL '(7 8 9 10 11 12))
+7. Trace: PREFIX ==> (7 8 9 10 11 12)
+6. Trace: PREFIX ==> (6 7 8 9 10 11 12)
+5. Trace: PREFIX ==> (5 6 7 8 9 10 11 12)
+4. Trace: PREFIX ==> (4 5 6 7 8 9 10 11 12)
+3. Trace: PREFIX ==> (3 4 5 6 7 8 9 10 11 12)
+2. Trace: PREFIX ==> (2 3 4 5 6 7 8 9 10 11 12)
+1. Trace: PREFIX ==> (1 2 3 4 5 6 7 8 9 10 11 12)
+(1 2 3 4 5 6 7 8 9 10 11 12)
+[4]> (prefix '(1 2 3 4 5 6) '( 7 8 9 10 11 12))[C[C[C[C[C[Ctrace prefix)[K[C[C[C[C[C[Cload "prefix")[1Pfix")[1Pfix")[1Pfix")sfix")ufix")[Cfix")
+;; Loading file /home/kramoliy/Q13/suffix.lsp ...
+;; Loaded file /home/kramoliy/Q13/suffix.lsp
+T
+[5]> (load "suffix")[C[C[C[C[C[Cprefix '(1 2 3 4 5 6) '( 7 8 9 10 11 12))[C[C[C[C[C[Ctrace prefix)[K[1Pfix)[1Pfix)[1Pfix)sfix)ufix)[Cfix)
+;; Tracing function SUFFIX.
+(SUFFIX)
+[6]> (trace suffix)[C[C[C[C[C[Cload "suffix")[C[C[C[C[C[Cprefix '(1 2 3 4 5 6) '( 7 8 9 10 11 12))[1P[1P[1P[1@s[1@u[C[1@f
+1. Trace: (SUFFIX '(1 2 3 4 5 6) '(7 8 9 10 11 12))
+2. Trace: (PREFIX '(8 9 10 11 12) '(1 2 3 4 5 6))
+3. Trace: (PREFIX '(9 10 11 12) '(1 2 3 4 5 6))
+4. Trace: (PREFIX '(10 11 12) '(1 2 3 4 5 6))
+5. Trace: (PREFIX '(11 12) '(1 2 3 4 5 6))
+6. Trace: (PREFIX '(12) '(1 2 3 4 5 6))
+7. Trace: (PREFIX 'NIL '(1 2 3 4 5 6))
+7. Trace: PREFIX ==> (1 2 3 4 5 6)
+6. Trace: PREFIX ==> (12 1 2 3 4 5 6)
+5. Trace: PREFIX ==> (11 12 1 2 3 4 5 6)
+4. Trace: PREFIX ==> (10 11 12 1 2 3 4 5 6)
+3. Trace: PREFIX ==> (9 10 11 12 1 2 3 4 5 6)
+2. Trace: PREFIX ==> (8 9 10 11 12 1 2 3 4 5 6)
+1. Trace: SUFFIX ==> (7 8 9 10 11 12 1 2 3 4 5 6)
+(7 8 9 10 11 12 1 2 3 4 5 6)
+[7]> (suffix '(1 2 3 4 5 6) '( 7 8 9 10 11 12))[C[C[C[C[C[Ctrace suffix)[K[C[C[C[C[C[Cload "suffix")[C[1Px")[1Px")[1Px")[1Px")[1P")[1P")l")e")n")g")t")h")o")f")l")i")s")t")
+;; Loading file /home/kramoliy/Q13/lengthoflist.lsp ...
+;; Loaded file /home/kramoliy/Q13/lengthoflist.lsp
+T
+[8]> (load "lengthoflist")[C[C[C[C[C[C[C[C[1P)[1Plengthoflist)[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P lengthoflist)[C[C[C[C[C[Ct lengthoflist)[C[C[C[C[C[C[Cr lengthoflist)[C[C[C[C[C[C[C[Ca lengthoflist)[C[C[C[C[C[C[C[C[Cc lengthoflist)[C[C[C[C[C[C[C[C[C[Ce lengthoflist)[C[C[C[C[C[C[C[C[C[C[C
+;; Tracing function LENGTHOFLIST.
+(LENGTHOFLIST)
+[9]> (trace lengthoflist)[C[C[C[C[C[Cload "lengthoflist")[C[C[C[C[C[Csuffix '(1 2 3 4 5 6) '( 7 8 9 10 11 12))[1P[1P[1P[1P[1P[1@ [1P[1P[1P[1P[1P[1P[1@l[1@e[1@n[1@g[1@t[1@h[1@o[1@f[1@l[1@i[1@s[1@t[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+1. Trace: (LENGTHOFLIST '(1 2 3 4 5 6 7 8 9 10 11 12))
+2. Trace: (LENGTHOFLIST '(2 3 4 5 6 7 8 9 10 11 12))
+3. Trace: (LENGTHOFLIST '(3 4 5 6 7 8 9 10 11 12))
+4. Trace: (LENGTHOFLIST '(4 5 6 7 8 9 10 11 12))
+5. Trace: (LENGTHOFLIST '(5 6 7 8 9 10 11 12))
+6. Trace: (LENGTHOFLIST '(6 7 8 9 10 11 12))
+7. Trace: (LENGTHOFLIST '(7 8 9 10 11 12))
+8. Trace: (LENGTHOFLIST '(8 9 10 11 12))
+9. Trace: (LENGTHOFLIST '(9 10 11 12))
+10. Trace: (LENGTHOFLIST '(10 11 12))
+11. Trace: (LENGTHOFLIST '(11 12))
+12. Trace: (LENGTHOFLIST '(12))
+13. Trace: (LENGTHOFLIST 'NIL)
+13. Trace: LENGTHOFLIST ==> 0
+12. Trace: LENGTHOFLIST ==> 1
+11. Trace: LENGTHOFLIST ==> 2
+10. Trace: LENGTHOFLIST ==> 3
+9. Trace: LENGTHOFLIST ==> 4
+8. Trace: LENGTHOFLIST ==> 5
+7. Trace: LENGTHOFLIST ==> 6
+6. Trace: LENGTHOFLIST ==> 7
+5. Trace: LENGTHOFLIST ==> 8
+4. Trace: LENGTHOFLIST ==> 9
+3. Trace: LENGTHOFLIST ==> 10
+2. Trace: LENGTHOFLIST ==> 11
+1. Trace: LENGTHOFLIST ==> 12
+12
+[10]> 
+Bye.
+bash-4.1$ exit
+exit
+
+Script done on Sat 21 Nov 2015 03:37:48 PM EST
